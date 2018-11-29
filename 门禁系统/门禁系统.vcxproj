@@ -18,6 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileIO.cpp" />
+    <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="People.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="System.cpp" />
+    <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="源.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileIO.h" />
+    <ClInclude Include="Interface.h" />
+    <ClInclude Include="People.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="System.h" />
+    <ClInclude Include="Teacher.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{31508971-1B1F-4F6A-9998-CB03AC2CBE48}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -141,8 +158,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
