@@ -21,7 +21,7 @@ void Interface::ChooseSurface()
 	case 15:Surface15();break;
 	case 16:Surface16();break;
 	case 17:Surface17();break;
-	case 21:Surface21();
+	case 21:Surface21(); break;
 	default:;
 	}
 }
