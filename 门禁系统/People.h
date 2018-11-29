@@ -15,7 +15,6 @@ struct ActiveTime {
 	ActiveTime():minute(0),hour(0){}
 	ActiveTime(int hour, int minute):minute(minute), hour(hour){}
 };
-
 ostream& operator << (ostream& out, const ActiveTime AT);
 
 
@@ -36,5 +35,11 @@ public:
 	const Status getStatus();
 	void ShowInfo2();
 	virtual void ShowInfo() = 0;
-
+	bool operator < (People& p)
+	{
+		if (this->AT.hour < p.AT.hour)return true;
+		else if (this->AT.hour == p.AT.hour&&this->AT.minute < p.AT.minute)return true;
+		else if (this->AT.hour == p.AT.hour && this->AT.minute == p.AT.minute && this->status == ³ö&&p.status == ½ø)return true;
+		else return false;
+	}
 };

@@ -194,12 +194,15 @@ bool System::Leave(string str)
 	vector<string>LeavePeople2 = SplitByStr(str, "，");
 	if (LeavePeople2.size() > LeavePeople.size())LeavePeople = LeavePeople2;
 	if (LeavePeople.size() == 5) {
-		Student* stu = new Student(LeavePeople[0], atoi(LeavePeople[2].substr(4).c_str()));
+		//Student* stu = new Student(LeavePeople[0], atoi(LeavePeople[2].substr(4).c_str()));
+		Student* stu = new Student(LeavePeople[0], atoi(LeavePeople[2].substr(4).c_str()), (int)LeavePeople[3][0] - '0', atoi(LeavePeople[3].substr(2).c_str()), LeavePeople[4] == "进" ? 进 : 出);
 		PeopleHere.push_back(stu);
 		return StudentEnter(stu);
 	}
 	else if (LeavePeople.size() == 6) {
-		Teacher* tea = new Teacher(LeavePeople[0], atoi(LeavePeople[2].substr(4).c_str()), atoi(LeavePeople[3].substr(4).c_str()));
+		//Teacher* tea = new Teacher(LeavePeople[0], atoi(LeavePeople[2].substr(4).c_str()), atoi(LeavePeople[3].substr(4).c_str()));
+		Teacher* tea = new Teacher(LeavePeople[0], atoi(LeavePeople[2].substr(4).c_str()), atoi(LeavePeople[3].substr(4).c_str()), (int)LeavePeople[4][0] - '0', atoi(LeavePeople[4].substr(2).c_str()), LeavePeople[5] == "进" ? 进 : 出);
+
 		PeopleHere.push_back(tea);
 		return TeacherEnter(tea);
 	}
@@ -228,8 +231,14 @@ void System::ShowPeopleHere()
 	}
 }
 
+bool func(People*p1, People*p2)
+{
+	return p1 < p2;
+}
+
 void System::ShowSimulator()
 {
+	sort(PeopleHere.begin(), PeopleHere.end(), func);
 	for (int i = 0; i < PeopleHere.size(); i++) {
 		//cout << typeid(*PeopleHere[i]).name();
 		//if (typeid(*PeopleHere[i]).name() == typeid(Student).name())cout << 1111 << endl;

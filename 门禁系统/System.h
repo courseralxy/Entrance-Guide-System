@@ -4,6 +4,7 @@
 #include<istream>
 #include<string>
 #include<typeinfo>
+#include<algorithm>
 using namespace std;
 #include"People.h"
 #include"Student.h"
